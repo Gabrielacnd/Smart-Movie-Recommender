@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+chroma_db/
+token_usage.json
+last_recommendation.mp3
+.DS_Store

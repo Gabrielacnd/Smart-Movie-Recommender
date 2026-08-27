@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Movie Recommender</h1>
+        <p class="subtitle">Spune-mi ce fel de film cauți și îți recomand unul potrivit.</p>
+
+        <div class="input-card">
+            <label for="query">Ce film cauți?</label>
+
+            <div class="input-row">
+                <textarea id="query" placeholder="Ex: Vreau un film cu magie, prietenie și aventură"></textarea>
+
+                <button
+                    id="voiceButton"
+                    class="mic-button"
+                    onclick="toggleVoiceRecognition()"
+                    title="Pornește recunoașterea vocală"
+                    type="button"
+                >
+                    🎤
+                </button>
+            </div>
+
+            <p id="voiceStatus" class="voice-status hidden"></p>
+
+            <div class="main-action">
+                <button id="recommendButton" class="primary-button" onclick="sendQuery()" type="button">
+                    Recomandă un film
+                </button>
+            </div>
+
+            <div id="warningMessage" class="warning-message hidden"></div>
+            <p id="loadingMessage" class="loading-message hidden"></p>
+        </div>
+
+        <div id="result" class="result-card hidden">
+            <h2 id="title" class="book-title"></h2>
+
+            <div class="section">
+                <h3>✨ Recomandare</h3>
+                <p id="recommendation"></p>
+            </div>
+
+            <div class="section">
+                <h3>📖 Rezumat complet</h3>
+                <p id="summary"></p>
+            </div>
+
+            <img id="bookImage" class="book-image hidden" alt="Poster film">
+
+            <div class="actions-row">
+                <button id="generateImageButton" class="image-button hidden" onclick="generateImageFromLastResult()" type="button">
+                    🎨 Generează poster
+                </button>
+            </div>
+
+            <div id="imageLoadingMessage" class="loading-message hidden">
+                Generez imaginea...
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/main.js?v=3"></script>
+</body>
+</html>
